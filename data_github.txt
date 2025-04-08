@@ -1,0 +1,347 @@
+PASOS PARA SUBIR UN PROYECTO A GITHUB
+✅ 1. Crea un repositorio en GitHub
+Entra a https://github.com
+
+Inicia sesión.
+
+Haz clic en el botón "New" o "Nuevo" (para crear un nuevo repositorio).
+
+Rellena:
+
+Nombre del repositorio (por ejemplo: web-pruebas)
+
+Puedes dejarlo Público o Privado
+
+No marques "Initialize this repository with a README"
+
+Haz clic en "Create repository"
+
+✅ 2. Sube tu proyecto desde Visual Studio Code o PowerShell
+Abre una terminal en la carpeta de tu proyecto, por ejemplo:
+
+powershell
+Copiar
+Editar
+cd "C:\Users\crist\OneDrive\Desktop\webs\web-pruebas"
+Luego ejecuta estos comandos:
+
+🟢 A. Inicializar Git en el proyecto
+bash
+Copiar
+Editar
+git init
+🟢 B. Añadir todos los archivos al repositorio local
+bash
+Copiar
+Editar
+git add .
+🟢 C. Crear el primer commit
+bash
+Copiar
+Editar
+git commit -m "Primer commit"
+🟢 D. Agregar el repositorio remoto de GitHub
+(Copia esta URL desde GitHub, donde dice “HTTPS”)
+
+bash
+Copiar
+Editar
+git remote add origin https://github.com/TU_USUARIO/TU_REPO.git
+🟢 E. Subir tu proyecto
+bash
+Copiar
+Editar
+git push -u origin master
+⚠️ Si te da error con master, intenta con:
+
+bash
+Copiar
+Editar
+git push -u origin main
+✅ 3. ¡Listo! Revisa tu repositorio en GitHub y verás tus archivos online 🎉
+
+
+
+Solución paso a paso
+1. Asegúrate de estar dentro de tu carpeta del proyecto
+powershell
+Copiar
+Editar
+cd "C:\Users\crist\OneDrive\Desktop\webs\web-pruebas"
+2. Agrega los archivos al staging
+bash
+Copiar
+Editar
+git add .
+3. Haz tu primer commit
+bash
+Copiar
+Editar
+git commit -m "Primer commit"
+🔍 Si te sale un mensaje tipo "Please tell me who you are", significa que Git necesita que configures tu nombre y correo. Usa esto:
+
+bash
+Copiar
+Editar
+git config --global user.name "Cristian Beltrán"
+git config --global user.email "tunombre@email.com"
+Luego vuelve a intentar el git commit.
+
+4. Ahora sí, sube tu proyecto
+Primero prueba:
+
+bash
+Copiar
+Editar
+git push -u origin master
+Si no funciona:
+
+bash
+Copiar
+Editar
+git push -u origin main
+Ya casi lo tienes, Cristian! Solo te faltó repetir el commit después de configurar tu nombre y correo. Git no lo guardó antes porque no tenía los datos del autor.
+
+✅ Solución rápida:
+Vuelve a ejecutar el commit:
+
+bash
+Copiar
+Editar
+git commit -m "Primer commit"
+Eso debería funcionar ahora que ya configuraste tu identidad. Luego haz:
+
+bash
+Copiar
+Editar
+git push -u origin master
+Si master no sirve, prueba:
+
+bash
+Copiar
+Editar
+git push -u origin main
+🔍 ¿Cómo saber si tu repo está usando main o master?
+Puedes ir a tu repositorio en GitHub, y en la parte superior verás algo como:
+
+css
+Copiar
+Editar
+<> Code       main ▼
+Ahí te dice claramente si tu rama principal es main o master.
+
+¿Quieres que lo revisemos juntos? Pásame el nombre del repo o una captura si quieres y te ayudo a asegurarlo.
+
+
+
+
+
+
+
+Dijiste:
+como veo mi proyecto en githug
+
+
+ChatGPT dijo:
+¡Bien ahí, Cristian! 😎 Si ya hiciste el push correctamente, ver tu proyecto en GitHub es muy fácil.
+
+🔍 Pasos para ver tu proyecto en GitHub:
+Abre tu navegador y ve a:
+
+arduino
+Copiar
+Editar
+https://github.com/cristscb/web_pruebas
+Ahí deberías ver todos los archivos de tu carpeta local.
+
+Si no ves nada (y ya hiciste el commit y el push), asegúrate de que:
+
+Hiciste el commit correctamente (git commit -m "Primer commit")
+
+El push fue exitoso
+
+Estás en la rama correcta (por defecto puede ser main o master)
+
+✅ ¿Cómo saber si el push funcionó?
+Después de ejecutar:
+
+bash
+Copiar
+Editar
+git push -u origin main
+O:
+
+bash
+Copiar
+Editar
+git push -u origin master
+Deberías ver algo como:
+
+yaml
+Copiar
+Editar
+Enumerating objects: ...
+Counting objects: ...
+Compressing objects: ...
+Writing objects: ...
+To https://github.com/cristscb/web_pruebas.git
+ * [new branch]      master -> master
+Si no ves eso, probablemente el push no se hizo correctamente.
+
+¿Quieres que revisemos juntos si quedó bien subido? O si quieres, muéstrame qué ves al entrar en ese enlace del repositorio.
+
+
+
+
+
+
+
+Dijiste:
+como puedo editar codigo y subirlo a github
+
+
+ChatGPT dijo:
+¡Crack, Cristian! Una vez que ya tienes tu proyecto en GitHub, editar código y subir los cambios es súper fácil. Aquí te dejo el paso a paso para hacer cambios y actualizarlos en GitHub:
+
+🔁 Editar y subir cambios a GitHub
+✅ 1. Edita tu código
+Puedes usar Visual Studio Code o cualquier editor que prefieras. Solo cambia, borra o agrega archivos normalmente en tu proyecto local.
+
+✅ 2. Guarda los cambios
+Después de editar, asegúrate de guardar los archivos (Ctrl + S en VS Code).
+
+✅ 3. Abre tu terminal en la carpeta del proyecto
+Ejemplo:
+
+bash
+Copiar
+Editar
+cd "C:\Users\crist\OneDrive\Desktop\webs\web-pruebas"
+✅ 4. Verifica qué cambió
+bash
+Copiar
+Editar
+git status
+Esto te mostrará los archivos modificados o nuevos.
+
+✅ 5. Añade los cambios
+bash
+Copiar
+Editar
+git add .
+(Esto añade todos los cambios. Si quieres agregar solo uno: git add archivo.html)
+
+✅ 6. Haz un commit describiendo el cambio
+bash
+Copiar
+Editar
+git commit -m "Descripción de lo que cambiaste"
+Ejemplo:
+
+bash
+Copiar
+Editar
+git commit -m "Agregada sección de contacto en el index"
+✅ 7. Sube los cambios a GitHub
+bash
+Copiar
+Editar
+git push
+Git ya sabe a qué rama y repositorio subirlo porque lo configuraste antes con git push -u origin main o master.
+
+💡 Pro tip:
+Después de cada cambio importante, puedes repetir estos 3 comandos:
+
+bash
+Copiar
+Editar
+git add .
+git commit -m "mensaje"
+git push
+
+PASOS PARA TRABAJAR TU PROYECTO EN OTRO ORDENADOR
+✅ 1. Instala Git en el otro computador
+Si aún no lo tiene, ve a:
+👉 https://git-scm.com/download/win
+
+✅ 2. Abre una terminal o Git Bash y ve a la carpeta donde quieras guardar el proyecto
+Ejemplo:
+
+bash
+Copiar
+Editar
+cd "C:\Users\TuUsuario\Desktop"
+✅ 3. Clona tu proyecto desde GitHub
+Ve a tu repositorio (por ejemplo: https://github.com/cristscb/web_pruebas), haz clic en el botón "Code" y copia la URL (HTTPS).
+
+Luego ejecuta:
+
+bash
+Copiar
+Editar
+git clone https://github.com/cristscb/web_pruebas.git
+Esto creará una carpeta con todo tu proyecto.
+
+✅ 4. Ingresa a la carpeta del proyecto
+bash
+Copiar
+Editar
+cd web_pruebas
+✅ 5. ¡Listo! Ya puedes abrirlo en VS Code
+bash
+Copiar
+Editar
+code .
+🛠️ ¿Y para subir cambios desde el otro PC?
+Repite el mismo flujo que ya conoces:
+
+bash
+Copiar
+Editar
+git add .
+git commit -m "Cambios desde otro PC"
+git push
+⚠️ Importante:
+Si el otro PC no tiene tu sesión iniciada, puede pedirte usuario/contraseña o token de acceso personal. Si eso pasa, te ayudo a generar uno fácilmente.
+
+¿Quieres que te ayude a probar esto en otro equipo? ¿O a dejarlo preparado para que no te pida login cada vez?
+
+
+
+
+
+
+
+Dijiste:
+siempre que este en otro pc tengo que descargar todo el proyecto ?
+
+
+ChatGPT dijo:
+Buena pregunta, Cristian. La respuesta corta es:
+
+🟡 Sí, pero solo la primera vez necesitas descargar (clonar) el proyecto.
+✅ ¿Qué pasa después de clonar?
+Una vez clonas tu proyecto en otro PC:
+
+Ya tienes una copia local completa del repositorio.
+
+Puedes editar, guardar, hacer commits y push igual que en tu PC principal.
+
+No necesitas volver a clonarlo a menos que borres la carpeta o cambies de equipo otra vez.
+
+📦 ¿Y si hiciste cambios en tu otro PC y quieres traerlos a este?
+En tu PC principal (donde ya tienes el proyecto clonado), solo haces:
+
+bash
+Copiar
+Editar
+git pull
+Y eso trae los cambios más recientes que subiste desde otro computador.
+
+🔁 En resumen:
+Situación	¿Qué haces?
+Primer uso en otro PC	git clone
+Proyecto ya clonado en ese PC	Trabajas directo
+Hay cambios nuevos en GitHub	git pull para actualizarlos
+Hiciste cambios y quieres subirlos	git add ., commit, push
+
