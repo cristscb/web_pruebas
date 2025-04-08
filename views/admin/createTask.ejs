@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Asignar Nueva Tarea</h2>
+
+<form method="POST" action="/admin/create-task">
+    <label>Nombre de la Tarea:</label><br>
+    <input type="text" name="name" required><br>
+    
+    <label>Asignar a:</label><br>
+    <select name="user_id" required>
+        <% users.forEach(user => { %>
+            <option value="<%= user.id %>"><%= user.username %></option>
+        <% }); %>
+    </select><br><br>
+    
+    <button type="submit">Asignar Tarea</button>
+</form>
+    
+</body>
+</html>

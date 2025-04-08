@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/output.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h2>Tareas Asignadas</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Descripción</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+    </tr>
+    <% tasks.forEach(task => { %>
+        <tr>
+            <td><%= task.id %></td>
+            <td><%= task.name %></td>
+            <td><%= task.status %></td>
+            <td>
+                <% if (task.status === 'pendiente') { %>
+                    <form action="/tasks/update-status" method="post" style="display:inline;">
+                        <input type="hidden" name="taskId" value="<%= task.id %>">
+                        <button type="submit">Marcar como Realizada</button>
+                    </form>
+                <% } else { %>
+                    Realizada
+                <% } %>
+            </td>
+        </tr>
+    <% }); %>
+</table>
+
+<a href="/logout">Cerrar Sesión</a>
+</body>
+</html>

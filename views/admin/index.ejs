@@ -1,0 +1,112 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Panel de Administración</h2>
+
+<p>Aquí puedes gestionar usuarios y tareas.</p>
+<a href="/admin/create-user">Crear Nuevo Usuario</a><br>
+<a href="/admin/create-task">Asignar Nueva Tarea</a><br>
+
+<h3>Usuarios Activos</h3>
+<table>
+    <tr>
+        <th>Usuario</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+    </tr>
+    <% users.forEach(user => { %>
+        <tr>
+            <td><%= user.username %></td>
+            <td><%= user.role %></td>
+            <td>
+                <a href="/admin/delete-user/<%= user.id %>">Eliminar</a>
+            </td>
+        </tr>
+    <% }); %>
+</table>
+
+<!-- <h3>Tareas Asignadas</h3>
+<table>
+    <tr>
+        <th>Tarea</th>
+        <th>Asignada a</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+    </tr>
+    <% tasks.forEach(task => { %>
+        <tr>
+            <td><%= task.description %></td>
+            <td><%= task.username %></td>
+            <td><%= task.status %></td>
+            <td>
+                <a href="/admin/complete-task/<%= task.id %>">Finalizar</a>
+                <a href="/admin/delete-task/<%= task.id %>">Eliminar</a>
+            </td>
+        </tr>
+    <% }); %>
+</table> -->
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+            <th>Usuario Asignado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% tasks.forEach(task => { %>
+            <tr>
+                <td><%= task.id %></td>
+                <td><%= task.description %></td>
+                <td><%= task.status %></td>
+                <td><%= task.username %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<h2>Panel de Administración</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Descripción</th>
+            <th>Estado</th>
+            <th>Usuario Asignado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% tasks.forEach(task => { %>
+            <tr>
+                <td><%= task.id %></td>
+                <td><%= task.description %></td>
+                <td><%= task.status %></td>
+                <td><%= task.username %></td>
+                <td>
+                    <% if (task.status === 'realizada') { %>
+                        <a href="/admin/complete-task/<%= task.id %>">Finalizar Tarea</a>
+                    <% } %>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<a href="/logout">Cerrar Sesión</a>
+
+    
+</body>
+</html>
