@@ -345,3 +345,31 @@ Proyecto ya clonado en ese PC	Trabajas directo
 Hay cambios nuevos en GitHub	git pull para actualizarlos
 Hiciste cambios y quieres subirlos	git add ., commit, push
 
+¡Perfecto, Cristian! Ya hiciste el commit correctamente 🎉, solo que ahora te está saliendo un error muy común de Git cuando hay cambios en GitHub que no tienes aún en tu máquina local.
+
+🧠 ¿Qué significa ese error?
+El repositorio en GitHub tiene cambios (como un README.md o .gitignore) que no están en tu carpeta local. Git te dice: “primero descarga esos cambios antes de subir los tuyos”.
+
+✅ Solución: Haz un pull primero
+Haz esto:
+
+bash
+Copiar
+Editar
+git pull origin master --rebase
+⚠️ Usa main si tu rama se llama main:
+
+bash
+Copiar
+Editar
+git pull origin main --rebase
+Este comando traerá los cambios remotos y los integrará con los tuyos.
+
+🔁 Luego vuelve a subir
+bash
+Copiar
+Editar
+git push
+🚀 Resultado:
+Tu archivo data_github.txt quedará subido al repositorio en GitHub sin perder nada 💪
+
