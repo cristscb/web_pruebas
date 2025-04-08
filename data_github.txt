@@ -373,3 +373,42 @@ git push
 🚀 Resultado:
 Tu archivo data_github.txt quedará subido al repositorio en GitHub sin perder nada 💪
 
+y si modifico el  codigo desde github ?
+
+
+ChatGPT dijo:
+¡Excelente pregunta, Cristian! 😎
+
+Cuando modificas el código directamente desde GitHub (por ejemplo, editando un archivo online), eso cuenta como un nuevo cambio remoto. Por eso, si quieres seguir trabajando localmente después de eso, debes hacer un git pull antes de seguir.
+
+✅ ¿Qué pasa si modificas desde GitHub?
+Imagina este flujo:
+
+Tú cambias index.html desde GitHub y lo guardas.
+
+Luego en tu PC haces cambios distintos a index.html también.
+
+Cuando haces git push... Git dirá:
+❌ “Hay cambios en GitHub que tú no tienes”
+Y te bloqueará el push hasta que hagas un pull.
+
+🔄 ¿Cómo sincronizar?
+Antes de trabajar localmente (si hiciste cambios en GitHub), haz:
+
+bash
+Copiar
+Editar
+git pull origin master --rebase
+O si tu rama es main:
+
+bash
+Copiar
+Editar
+git pull origin main --rebase
+Esto trae los cambios de GitHub y los aplica sin borrar tus cambios locales.
+
+💡 Tips importantes
+Acción	¿Qué debes hacer?
+Editas en GitHub	Haz git pull en tu PC
+Editas en tu PC	Haz git push
+Editas en ambos lados	Haz pull --rebase antes de push
